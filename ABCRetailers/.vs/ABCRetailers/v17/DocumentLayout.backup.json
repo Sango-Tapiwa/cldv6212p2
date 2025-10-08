@@ -4,113 +4,29 @@
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{FC7E6833-3FDA-4B43-BCC2-1DECC1AC7173}|..\\ABCRetailers.Functions\\ABCRetailers.Functions.csproj|c:\\users\\lab_services_student\\desktop\\abcretailers.functions\\functions\\ordersfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC7E6833-3FDA-4B43-BCC2-1DECC1AC7173}|..\\ABCRetailers.Functions\\ABCRetailers.Functions.csproj|c:\\users\\lab_services_student\\desktop\\abcretailers.functions\\models\\apimodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC7E6833-3FDA-4B43-BCC2-1DECC1AC7173}|..\\ABCRetailers.Functions\\ABCRetailers.Functions.csproj|c:\\users\\lab_services_student\\desktop\\abcretailers.functions\\functions\\queueprocessorfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC7E6833-3FDA-4B43-BCC2-1DECC1AC7173}|..\\ABCRetailers.Functions\\ABCRetailers.Functions.csproj|c:\\users\\lab_services_student\\desktop\\abcretailers.functions\\helpers\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC7E6833-3FDA-4B43-BCC2-1DECC1AC7173}|..\\ABCRetailers.Functions\\ABCRetailers.Functions.csproj|c:\\users\\lab_services_student\\desktop\\abcretailers.functions\\helpers\\httpjson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC7E6833-3FDA-4B43-BCC2-1DECC1AC7173}|..\\ABCRetailers.Functions\\ABCRetailers.Functions.csproj|c:\\users\\lab_services_student\\desktop\\abcretailers.functions\\functions\\uploadsfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "QueueProcessorFunctions.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Functions\\QueueProcessorFunctions.cs",
-              "RelativeDocumentMoniker": "..\\ABCRetailers.Functions\\Functions\\QueueProcessorFunctions.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Functions\\QueueProcessorFunctions.cs",
-              "RelativeToolTip": "..\\ABCRetailers.Functions\\Functions\\QueueProcessorFunctions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T16:25:08.502Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "OrdersFunctions.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Functions\\OrdersFunctions.cs",
               "RelativeDocumentMoniker": "..\\ABCRetailers.Functions\\Functions\\OrdersFunctions.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Functions\\OrdersFunctions.cs*",
-              "RelativeToolTip": "..\\ABCRetailers.Functions\\Functions\\OrdersFunctions.cs*",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAkwMsAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Functions\\OrdersFunctions.cs",
+              "RelativeToolTip": "..\\ABCRetailers.Functions\\Functions\\OrdersFunctions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T16:19:29.831Z",
+              "WhenOpened": "2025-10-08T19:26:50.284Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Map.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Helpers\\Map.cs",
-              "RelativeDocumentMoniker": "..\\ABCRetailers.Functions\\Helpers\\Map.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Helpers\\Map.cs",
-              "RelativeToolTip": "..\\ABCRetailers.Functions\\Helpers\\Map.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T16:17:28.428Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApiModels.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Models\\ApiModels.cs",
-              "RelativeDocumentMoniker": "..\\ABCRetailers.Functions\\Models\\ApiModels.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Models\\ApiModels.cs",
-              "RelativeToolTip": "..\\ABCRetailers.Functions\\Models\\ApiModels.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T16:11:04.855Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HttpJson.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Helpers\\HttpJson.cs",
-              "RelativeDocumentMoniker": "..\\ABCRetailers.Functions\\Helpers\\HttpJson.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Helpers\\HttpJson.cs",
-              "RelativeToolTip": "..\\ABCRetailers.Functions\\Helpers\\HttpJson.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA3wDQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T15:59:21.926Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UploadsFunctions.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Functions\\UploadsFunctions.cs",
-              "RelativeDocumentMoniker": "..\\ABCRetailers.Functions\\Functions\\UploadsFunctions.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\Desktop\\ABCRetailers.Functions\\Functions\\UploadsFunctions.cs",
-              "RelativeToolTip": "..\\ABCRetailers.Functions\\Functions\\UploadsFunctions.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAkwD8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T15:51:40.832Z"
             }
           ]
         }

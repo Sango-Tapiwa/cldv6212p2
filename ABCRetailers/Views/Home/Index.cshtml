@@ -8,9 +8,26 @@
         <i class="fas fa-store"></i> Welcome to ABC Retailers!
     </h1>
     <p class="lead">Your one-stop shop for the best deals and latest products</p>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-lg-6 col-md-8">
+            <form method="get" asp-action="Index">
+                <div class="input-group input-group-lg shadow-sm">
+                    <input type="text"
+                           name="searchTerm"
+                           value="@Model.SearchTerm"
+                           class="form-control search-input"
+                           placeholder="Search for products..."
+                           aria-label="Search products">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-search me-2"></i>Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
-<!-- Quick Actions -->
 <div class="row mb-5 g-3">
     <div class="col-md-3 col-sm-6">
         <a asp-controller="Customer" asp-action="Index" class="btn btn-primary btn-lg w-100 h-100 d-flex flex-column justify-content-center">
@@ -42,12 +59,22 @@
     </div>
 </div>
 
-<!-- Featured Products -->
-<div class="row">
+<div class="row mb-5">
     <div class="col-12">
         <h2 class="mb-4">
-            <i class="fas fa-star text-warning"></i> Featured Products
+            <i class="fas fa-star text-warning"></i>
+            @(!string.IsNullOrWhiteSpace(Model?.SearchTerm) ? "Search Results" : "Featured Products")
         </h2>
+
+        @if (!string.IsNullOrWhiteSpace(Model?.SearchTerm))
+        {
+            <div class="mb-3">
+                <span class="text-muted">Found @Model?.FeaturedProducts?.Count() product(s) matching "@Model?.SearchTerm"</span>
+                <a asp-action="Index" class="ms-2 btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-times me-1"></i>Clear Search
+                </a>
+            </div>
+        }
 
         @if (Model?.FeaturedProducts?.Any() == true)
         {
@@ -55,7 +82,7 @@
                 @foreach (var product in Model.FeaturedProducts.Take(8))
                 {
                     <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm product-card">
                             @if (!string.IsNullOrWhiteSpace(product.ImageUrl))
                             {
                                 <img src="@product.ImageUrl" class="card-img-top" alt="@product.ProductName" style="height: 160px; object-fit: cover;">
@@ -72,8 +99,8 @@
                                 <p class="card-text small text-muted text-center flex-grow-1">
                                     @{
                                         var desc = product.Description ?? "";
-                                        @:(desc.Length > 60 ? desc.Substring(0, 60) + "…" : desc)
                                     }
+                                    @(desc.Length > 60 ? desc.Substring(0, 60) + "…" : desc)
                                 </p>
                                 <div class="mt-auto text-center">
                                     <p class="mb-1"><strong class="text-success">@product.Price.ToString("C")</strong></p>
@@ -85,6 +112,13 @@
                 }
             </div>
         }
+        else if (!string.IsNullOrWhiteSpace(Model?.SearchTerm))
+        {
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> No products found matching "@Model?.SearchTerm".
+                <a asp-action="Index" class="alert-link">Clear search</a> to see all products.
+            </div>
+        }
         else
         {
             <div class="alert alert-info">
@@ -94,3 +128,258 @@
         }
     </div>
 </div>
+
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="bg-light py-5 rounded-3 shadow-sm">
+            <div class="text-center">
+                <h2 class="display-5 fw-bold mb-3">
+                    <i class="fas fa-phone-alt me-3"></i>Contact Us
+                </h2>
+                <p class="lead mb-0">We're here to help! Get in touch with our team for any inquiries or support.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0 contact-card">
+            <div class="card-body text-center p-4">
+                <div class="contact-icon mb-3">
+                    <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                </div>
+                <h4 class="card-title fw-bold mb-3">Our Address</h4>
+                <p class="card-text text-muted lh-lg">
+                    144 Peter Rd, Ruimsig<br>
+                    Roodepoort, 1724<br>
+                    South Africa
+                </p>
+                <a href="https://goo.gl/maps/your-location" target="_blank"
+                   class="btn btn-outline-primary btn-sm mt-2">
+                    <i class="fas fa-external-link-alt me-1"></i>View on Map
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0 contact-card">
+            <div class="card-body text-center p-4">
+                <div class="contact-icon mb-3">
+                    <i class="fas fa-envelope fa-2x text-success"></i>
+                </div>
+                <h4 class="card-title fw-bold mb-3">Email Us</h4>
+                <p class="card-text text-muted mb-3">
+                    Send us an email and we'll respond within 24 hours
+                </p>
+                <a href="mailto:enquiries@iiemsa.co.za"
+                   class="btn btn-success">
+                    <i class="fas fa-paper-plane me-2"></i>enquiries@iiemsa.co.za
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-12">
+        <div class="card h-100 shadow-sm border-0 contact-card">
+            <div class="card-body text-center p-4">
+                <div class="contact-icon mb-3">
+                    <i class="fas fa-phone fa-2x text-warning"></i>
+                </div>
+                <h4 class="card-title fw-bold mb-3">Call Us</h4>
+                <p class="card-text text-muted mb-3">
+                    Speak directly with our customer service team
+                </p>
+                <a href="tel:0119504000"
+                   class="btn btn-warning">
+                    <i class="fas fa-phone me-2"></i>011 950 4000
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-light border-0 py-3">
+                <h3 class="card-title mb-0 fw-bold">
+                    <i class="fas fa-clock text-info me-2"></i>Operational Hours
+                </h3>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="fw-semibold">Day</th>
+                                <th class="fw-semibold">Hours</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="closed-day">
+                                <td class="fw-medium">Sunday</td>
+                                <td class="text-muted">
+                                    <i class="fas fa-times-circle text-danger me-1"></i>Closed
+                                </td>
+                            </tr>
+                            <tr class="open-day">
+                                <td class="fw-medium">Monday</td>
+                                <td class="text-success">
+                                    <i class="fas fa-check-circle me-1"></i>8:00 AM – 5:00 PM
+                                </td>
+                            </tr>
+                            <tr class="open-day">
+                                <td class="fw-medium">Tuesday</td>
+                                <td class="text-success">
+                                    <i class="fas fa-check-circle me-1"></i>8:00 AM – 5:00 PM
+                                </td>
+                            </tr>
+                            <tr class="open-day">
+                                <td class="fw-medium">Wednesday</td>
+                                <td class="text-success">
+                                    <i class="fas fa-check-circle me-1"></i>8:00 AM – 5:00 PM
+                                </td>
+                            </tr>
+                            <tr class="open-day">
+                                <td class="fw-medium">Thursday</td>
+                                <td class="text-success">
+                                    <i class="fas fa-check-circle me-1"></i>8:00 AM – 5:00 PM
+                                </td>
+                            </tr>
+                            <tr class="open-day">
+                                <td class="fw-medium">Friday</td>
+                                <td class="text-success">
+                                    <i class="fas fa-check-circle me-1"></i>8:00 AM – 5:00 PM
+                                </td>
+                            </tr>
+                            <tr class="closed-day">
+                                <td class="fw-medium">Saturday</td>
+                                <td class="text-muted">
+                                    <i class="fas fa-times-circle text-danger me-1"></i>Closed
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-lg-6">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-header bg-gradient bg-primary text-white border-0 py-3">
+                <h3 class="card-title mb-0 fw-bold">
+                    <i class="fas fa-comment-dots me-2"></i>Send us a Message
+                </h3>
+            </div>
+            <div class="card-body p-0">
+                <div class="embed-responsive" style="height: 600px;">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdNLEE7VMraDY-_uZH5KbBzxGpFUOH0Y3PqwtYQ4KGcZY1npg/viewform?embedded=true"
+                            height="600" frameborder="0" marginheight="0" marginwidth="0"
+                            class="rounded-bottom w-100">
+                        Loading form...
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-header bg-gradient bg-success text-white border-0 py-3">
+                <h3 class="card-title mb-0 fw-bold">
+                    <i class="fas fa-map-marked-alt me-2"></i>Find Us on the Map
+                </h3>
+            </div>
+            <div class="card-body p-0">
+                <div class="embed-responsive" style="height: 600px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.4770471853158!2d27.873880075411215!3d-26.08334197715115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e959ef5277b96a7%3A0xc4aa15508f8e5e8c!2sIIE%20MSA!5e0!3m2!1sen!2sza!4v1757668795191!5m2!1sen!2sza"
+                            height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                            class="rounded-bottom w-100">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card bg-light border-0 shadow-sm">
+            <div class="card-body text-center py-5">
+                <h3 class="fw-bold text-dark mb-3">Ready to Get Started?</h3>
+                <p class="text-muted mb-4 fs-5">
+                    Contact us today to learn more about our services and how we can help your business grow.
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="mailto:enquiries@iiemsa.co.za" class="btn btn-primary btn-lg px-4">
+                        <i class="fas fa-envelope me-2"></i>Send Email
+                    </a>
+                    <a href="tel:0119504000" class="btn btn-outline-primary btn-lg px-4">
+                        <i class="fas fa-phone me-2"></i>Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .search-input {
+        border-top-left-radius: 50px !important;
+        border-bottom-left-radius: 50px !important;
+    }
+
+    .input-group-lg .btn {
+        border-top-right-radius: 50px !important;
+        border-bottom-right-radius: 50px !important;
+    }
+
+    .product-card,
+    .contact-card {
+        transition: all 0.3s ease;
+        border-radius: 12px !important;
+    }
+
+        .product-card:hover,
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+        }
+
+    .contact-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover .contact-icon {
+        transform: scale(1.1);
+    }
+
+    .open-day {
+        background-color: rgba(25, 135, 84, 0.05);
+    }
+
+    .closed-day {
+        background-color: rgba(220, 53, 69, 0.05);
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: rgba(13, 110, 253, 0.1);
+    }
+
+    .bg-gradient {
+        background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-primary) 100%);
+    }
+
+    .card-header.bg-gradient.bg-success {
+        background: linear-gradient(135deg, var(--bs-success) 0%, #20c997 100%) !important;
+    }
+
+    .embed-responsive iframe {
+        border-radius: 0 0 12px 12px;
+    }
+</style>

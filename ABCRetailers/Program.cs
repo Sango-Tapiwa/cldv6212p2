@@ -2,6 +2,7 @@
 using ABCRetailers.Services;
 using Microsoft.AspNetCore.Http.Features;
 using System.Globalization;
+using Microsoft.Extensions.Azure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +14,10 @@ builder.Services.AddHttpClient("Functions", (sp, client) =>
 {
     var cfg = sp.GetRequiredService<IConfiguration>();
     var baseUrl = cfg["Functions:BaseUrl"] ?? throw new InvalidOperationException("Functions:BaseUrl missing");
-    client.BaseAddress = new Uri(baseUrl.TrimEnd('/') + "/api/"); // adjust if your Functions don't use /api
+    client.BaseAddress = new Uri(baseUrl.TrimEnd('/') + "/api/");
     client.Timeout = TimeSpan.FromSeconds(100);
 });
+
 
 // Use the typed client (replaces IAzureStorageService everywhere)
 builder.Services.AddScoped<IFunctionsApi, FunctionsApiClient>();
@@ -28,6 +30,12 @@ builder.Services.Configure<FormOptions>(o =>
 
 // Optional: logging is added by default, keeping this is harmless
 builder.Services.AddLogging();
+builder.Services.AddAzureClients(clientBuilder =>
+{
+    clientBuilder.AddBlobServiceClient(builder.Configuration["StorageConnection:blobServiceUri"]!).WithName("StorageConnection");
+    clientBuilder.AddQueueServiceClient(builder.Configuration["StorageConnection:queueServiceUri"]!).WithName("StorageConnection");
+    clientBuilder.AddTableServiceClient(builder.Configuration["StorageConnection:tableServiceUri"]!).WithName("StorageConnection");
+});
 
 var app = builder.Build();
 

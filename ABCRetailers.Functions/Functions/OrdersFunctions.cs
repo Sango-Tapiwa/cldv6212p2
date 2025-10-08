@@ -101,6 +101,7 @@ public class OrdersFunctions
         var order = new OrderEntity
         {
             CustomerId = input.CustomerId,
+            Username = customer.Username,
             ProductId = input.ProductId,
             ProductName = product.ProductName,
             Quantity = input.Quantity,

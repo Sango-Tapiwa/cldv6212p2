@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[12.23.0, )"
             },
+            "Microsoft.Extensions.Azure": {
+              "target": "Package",
+              "version": "[1.11.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[9.0.0, )"

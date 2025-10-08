@@ -1165,10 +1165,15 @@ C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\staticwebass
 C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\ABCRetai.8C4BC076.Up2Date
 C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\ABCRetailers.dll
 C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\refint\ABCRetailers.dll
 C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\ABCRetailers.pdb
 C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\ABCRetailers.genruntimeconfig.cache
 C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\ref\ABCRetailers.dll
+C:\Users\lab_services_student\Desktop\ABCRetailers\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\lab_services_student\Desktop\ABCRetailers\bin\Debug\net9.0\Azure.Identity.dll
+C:\Users\lab_services_student\Desktop\ABCRetailers\bin\Debug\net9.0\Microsoft.Extensions.Azure.dll
+C:\Users\lab_services_student\Desktop\ABCRetailers\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+C:\Users\lab_services_student\Desktop\ABCRetailers\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\lab_services_student\Desktop\ABCRetailers\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
